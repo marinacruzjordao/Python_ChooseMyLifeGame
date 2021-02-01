@@ -15,30 +15,33 @@ class Choose:
 
         layout=[[sg.Text('Write a Question:'), sg.Input(key='question')],
                 [sg.Button('Generate')],
-                [sg.Text('Answer'),]#sg.Output(size=(80,10))]#, sg.Output(size=(80, 10))],
+                [sg.Text('Answer'),sg.Output(size=(80,10))]#, sg.Output(size=(80, 10))],
                 ]
         #create a window in GUI
-        self.w1=sg.Window('Choos My Life Game').layout(layout)
-
+        self.w1=sg.Window('Choose My Life Game').layout(layout)
 
 
     def answer(self):
         num= randint(1,len(self.answers))
         ans=self.answers[num]
-        print(ans)
+        return ans
 
-    def cicle(self):
-        while True:
-
-            self.event, self.value = self.w1.read()
-
-            if self.event == sg.WINDOW_CLOSED: # validates if the window is closed
-                break
-
-            if self.event == 'Generate':
-                print(c.answer())
-
-
+    def data(self):
+        self.event, self.value = self.w1.read()
+        return self.event, self.value
 
 
 c=Choose()
+#c.cicle()
+
+while True:
+
+    event, value = c.data()
+
+    if event == 'Generate':
+        print(c.answer())
+
+    if event == sg.WINDOW_CLOSED: # validates if the window is closed
+        break
+
+
