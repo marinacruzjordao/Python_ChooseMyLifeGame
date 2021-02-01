@@ -13,16 +13,16 @@ class Choose:
         sg.theme('Reddit')
 
 
-        layout=[[sg.Text('Write a Question:'), sg.Input(key='question')],
-                [sg.Button('Generate')],
-                [sg.Text('Answer'),sg.Output(size=(80,10))]#, sg.Output(size=(80, 10))],
+        layout=[[sg.Text('Write a Question:'), sg.Input(key='question')], #line1
+                [sg.Button('Generate')], #line 2
+                [sg.Text('Answer'),sg.Output(size=(80,10))]#Line 3
                 ]
         #create a window in GUI
         self.w1=sg.Window('Choose My Life Game').layout(layout)
 
 
     def answer(self):
-        num= randint(1,len(self.answers))
+        num= randint(1,len(self.answers)) #generate a answer
         ans=self.answers[num]
         return ans
 
