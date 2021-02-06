@@ -1,8 +1,8 @@
 # Python_ChooseMyLifeGame
 Right a question and obtain a random answer
 
-###Choose My Life Game:
+### Choose My Life Game:
 Introduce your question and obtain a answer
 
-###Text Editor: 
+### Text Editor: 
 VSC, Pycharm
